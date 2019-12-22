@@ -61,8 +61,8 @@ class _Profile extends State<Profile> {
               Card(
                 margin: EdgeInsets.all(30.0),
                 child: Text(
-                  '''本業はサラリーマンですが、副業でプログラミングをしております。
-　言語はFlutter　活動してからの日は浅いためまだまだ未熟ですが、今後とも宜しくお願いします。''',
+                  '''本業はサラリーマン、副業でプログラミングをしております。
+　言語はFlutter　活動してからの日は浅いためまだまだ未熟ですが、宜しくお願いします。''',
                   style: TextStyle(
                       fontSize: 20.0,
                       color: const Color(0xFF000000),

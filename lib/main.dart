@@ -22,40 +22,55 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: WidgetBasic(title: 'ポートフォリオ'),
+      home: MyhomePage(),
     );
   }
 }
 
-class WidgetBasic extends StatefulWidget {
-  WidgetBasic({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
+class MyhomePage extends StatefulWidget {
   @override
-  _WidgetBasic createState() => new _WidgetBasic();
+  _MyhomePageState createState() => new _MyhomePageState();
 }
 
-class _WidgetBasic extends State<WidgetBasic> {
-
-
+class _MyhomePageState extends State<MyhomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
-        backgroundColor: Colors.orange[500],
+    return  Scaffold(
+      appBar: new AppBar(title: new Text('ポートフォリオ')),
+      drawer: new Drawer(
+        child: ListView(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: new Text('寺岡健史'),
+              accountEmail: new Text('tomoken453@gmail.com'),
+            ),
+            new ListTile(
+              title: new Text('Profile'),
+              onTap: (){
+               Navigator.push(
+                context,
+                  new MaterialPageRoute(
+                    builder: (BuildContext context)=>
+                      new Profile(title: 'Profile')));
+              },
+            ),
+            new ListTile(
+              title: new Text('Products'),
+              onTap: (){
+               Navigator.push(
+                context,
+                  new MaterialPageRoute(
+                    builder: (BuildContext context)=>
+                      new Products(title: 'Products')));
+            },
+           ),
+          ],
+        ),
       ),
-      body: Column(children: <Widget>[
+     
+      body:
+      Column(children: <Widget>[
+        Text('メニューバーから一覧が表示されます。'),
          FlatButton(
             key: null,
             onPressed: () {
@@ -65,7 +80,7 @@ class _WidgetBasic extends State<WidgetBasic> {
                       builder: (BuildContext context) =>
                           new Profile()));
             },
-            color: Colors.orange[100],
+            color: Colors.white,
             child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
@@ -85,11 +100,11 @@ class _WidgetBasic extends State<WidgetBasic> {
                       builder: (BuildContext context) =>
                           new Products()));
             },
-            color: Colors.orange[100],
+            color: Colors.white,
             child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
-                  "ProductS",
+                  "Products",
                   style: TextStyle(
                       fontSize: 32.0,
                       color: Colors.black,
