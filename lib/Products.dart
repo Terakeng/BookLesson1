@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app2/MaterialUI.dart';
 import './PFCbalance.dart';
 import './MaterialUI.dart';
+import './WidgetAdvance.dart';
 
 class Products extends StatefulWidget {
   Products({Key key, this.title}) : super(key: key);
@@ -59,5 +60,25 @@ class _Products extends State<Products> {
                       fontWeight: FontWeight.w600,
                       fontFamily: "Roboto"),
                 ))),
+         FlatButton(
+            key: null,
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          new WidgetAdvance()));
+            },
+            color: Colors.blue[100],
+            child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  "WidgetAdvance",
+                  style: TextStyle(
+                      fontSize: 32.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "Roboto"),
+                ))), 
         ],
         ),);}}
