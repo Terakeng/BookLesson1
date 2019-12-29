@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
 
-class MaterialUI extends StatefulWidget {
+class TodaySchedule extends StatefulWidget {
   //コンストラクタ
   //ウィジェットには識別IDとしてKeyが自動で与えられるが利用されないケースが多い
-  MaterialUI({Key key, this.title}) : super(key: key);
+  TodaySchedule({Key key, this.title}) : super(key: key);
 
   final String title;
   @override
-  _MaterialUI createState() => new _MaterialUI();
+  _TodaySchedule createState() => new _TodaySchedule();
 }
 
-class _MaterialUI extends State<MaterialUI> {
+class _TodaySchedule extends State<TodaySchedule> {
   final textFieldFixController = TextEditingController();
   final textFieldVariableController = TextEditingController();
-  final String initMessage = "初期表示";
-  static var coin = <String>['表', '裏'];
+  final String initMessage = "どうする？";
+  static var coin = <String>
+  ['出掛けず家でのんびりしよう！',
+  '出掛けず家で勉強しよう！',
+   'ジムで体を鍛えよう！',
+   'カラオケでストレス発散しよう！',
+   '喫茶店で本を読もう！',
+   '買い物に出掛けよう！',
+   '小旅行にいこう！',
+   '釣りをしにいこう！',
+   '今日はちょっとギャンブルでもするか・・・'];
   String buttonMessage;
   String textFieldMessage;
   String selectCheckMessage;
@@ -44,7 +53,7 @@ class _MaterialUI extends State<MaterialUI> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('MaterialUI'),
+          title: Text('TodaySchedule'),
         ),
         body: GridView.count(
             crossAxisCount: 1,
@@ -69,7 +78,7 @@ class _MaterialUI extends State<MaterialUI> {
                         onPressed: buttonPressed,
                         color: Colors.black12,
                         child:  Text(
-                              "Push me!",
+                              "強めに叩く",
                               style: TextStyle(
                                   fontSize: 32.0,
                                   color: const Color(0xFF000000),
@@ -83,7 +92,7 @@ class _MaterialUI extends State<MaterialUI> {
                         child: Padding(
                             padding: EdgeInsets.all(10.0),
                             child: Text(
-                              "Push me!",
+                              "弱く叩く",
                               style: TextStyle(
                                   fontSize: 32.0,
                                   color: const Color(0xFF000000),
@@ -92,7 +101,7 @@ class _MaterialUI extends State<MaterialUI> {
                             ))),
                     IconButton(
                       icon: const Icon(Icons.insert_emoticon),
-                      iconSize: 100.0,
+                      iconSize:   70.0,
                       color: Colors.red,
                       onPressed: buttonPressed,
                     ),
@@ -176,7 +185,7 @@ class _MaterialUI extends State<MaterialUI> {
                             onChanged: checkChanged,
                           ),
                           Text(
-                            "check",
+                            "？",
                             style: TextStyle(
                                 fontSize: 28.0,
                                 fontWeight: FontWeight.w400,
@@ -197,7 +206,7 @@ class _MaterialUI extends State<MaterialUI> {
                     Text(
                       selectRadioMessage,
                       style: TextStyle(
-                          fontSize: 32.0,
+                          fontSize: 24.0,
                           fontWeight: FontWeight.w400,
                           fontFamily: "Roboto"),
                     ),
@@ -210,12 +219,12 @@ class _MaterialUI extends State<MaterialUI> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Radio<String>(
-                            value: 'A',
+                            value: '飲みます！',
                             groupValue: radioSelected,
                             onChanged: (String value) => radioChanged(value),
                           ),
                           Text(
-                            "radio A",
+                            "アルコール有り",
                             style: TextStyle(
                                 fontSize: 28.0,
                                 fontWeight: FontWeight.w400,
@@ -228,12 +237,12 @@ class _MaterialUI extends State<MaterialUI> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Radio<String>(
-                            value: 'B',
+                            value: '飲みません！',
                             groupValue: radioSelected,
                             onChanged: (String value) => radioChanged(value),
                           ),
                           Text(
-                            "radio B",
+                            "アルコール無し",
                             style: TextStyle(
                                 fontSize: 28.0,
                                 fontWeight: FontWeight.w400,
@@ -400,14 +409,14 @@ class _MaterialUI extends State<MaterialUI> {
   void checkChanged(bool value) {
     setState(() {
       checked = value;
-      selectCheckMessage = value ? 'checked' : 'unchecked';
+      selectCheckMessage = value ? '友達と' : '一人';
     });
   }
 
   void radioChanged(String value) {
     setState(() {
       radioSelected = value;
-      selectRadioMessage = 'select: $radioSelected';
+      selectRadioMessage = 'アルコールは・・・$radioSelected';
     });
   }
 

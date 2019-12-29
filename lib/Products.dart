@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app2/MaterialUI.dart';
+import 'package:flutter_app2/TodaySchedule.dart';
+import 'package:flutter_app2/TodoList.dart';
 import './PFCbalance.dart';
-import './MaterialUI.dart';
-import './WidgetAdvance.dart';
+import './TodaySchedule.dart';
+import './TodoList.dart';
 
 class Products extends StatefulWidget {
   Products({Key key, this.title}) : super(key: key);
@@ -47,13 +48,13 @@ class _Products extends State<Products> {
                   context,
                   new MaterialPageRoute(
                       builder: (BuildContext context) =>
-                          new MaterialUI()));
+                          new TodaySchedule()));
             },
             color: Colors.blue[100],
             child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
-                  "MaterialUI",
+                  "TodaySchedule",
                   style: TextStyle(
                       fontSize: 32.0,
                       color: Colors.black,
@@ -67,7 +68,7 @@ class _Products extends State<Products> {
                   context,
                   new MaterialPageRoute(
                       builder: (BuildContext context) =>
-                          new WidgetAdvance()));
+                          new TodoList()));
             },
             color: Colors.blue[100],
             child: Padding(
