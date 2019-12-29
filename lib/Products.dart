@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app2/TodaySchedule.dart';
-import 'package:flutter_app2/TodoList.dart';
+import 'package:flutter_app2/MaterialUI.dart';
+import 'package:flutter_app2/WidgetAdvance.dart';
 import './PFCbalance.dart';
-import './TodaySchedule.dart';
-import './TodoList.dart';
+import './MaterialUI.dart';
+import './WidgetAdvance.dart';
 
 class Products extends StatefulWidget {
   Products({Key key, this.title}) : super(key: key);
@@ -48,7 +48,7 @@ class _Products extends State<Products> {
                   context,
                   new MaterialPageRoute(
                       builder: (BuildContext context) =>
-                          new TodaySchedule()));
+                          new MaterialUI()));
             },
             color: Colors.blue[100],
             child: Padding(
@@ -68,7 +68,7 @@ class _Products extends State<Products> {
                   context,
                   new MaterialPageRoute(
                       builder: (BuildContext context) =>
-                          new TodoList()));
+                          new WidgetAdvance()));
             },
             color: Colors.blue[100],
             child: Padding(

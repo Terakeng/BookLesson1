@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class TodaySchedule extends StatefulWidget {
+class MaterialUI extends StatefulWidget {
   //コンストラクタ
   //ウィジェットには識別IDとしてKeyが自動で与えられるが利用されないケースが多い
-  TodaySchedule({Key key, this.title}) : super(key: key);
+  MaterialUI({Key key, this.title}) : super(key: key);
 
   final String title;
   @override
-  _TodaySchedule createState() => new _TodaySchedule();
+  _MaterialUI createState() => new _MaterialUI();
 }
 
-class _TodaySchedule extends State<TodaySchedule> {
+class _MaterialUI extends State<MaterialUI> {
   final textFieldFixController = TextEditingController();
   final textFieldVariableController = TextEditingController();
   final String initMessage = "どうする？";
@@ -53,7 +53,7 @@ class _TodaySchedule extends State<TodaySchedule> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('TodaySchedule'),
+          title: Text(widget.title),
         ),
         body: GridView.count(
             crossAxisCount: 1,

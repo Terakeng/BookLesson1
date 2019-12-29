@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class TodoList extends StatefulWidget {
+class WidgetAdvance extends StatefulWidget {
   //コンストラクタ
   //ウィジェットには識別IDとしてKeyが自動で与えられるが利用されないケースが多い
-  TodoList({Key key, this.title}) : super(key: key);
+  WidgetAdvance({Key key, this.title}) : super(key: key);
 
   final String title;
   @override
-  _TodoList createState() => new _TodoList();
+  _WidgetAdvance createState() => new _WidgetAdvance();
 }
 
-class _TodoList extends State<TodoList>
+class _WidgetAdvance extends State<WidgetAdvance>
     with SingleTickerProviderStateMixin {
   var items = ['Android', 'Heart'];
   final List<Tab> tabs = <Tab>[
@@ -48,7 +48,7 @@ class _TodoList extends State<TodoList>
     return new Scaffold(
       //silver bar だけ表示させたい場合はappBarをまるごと削除する
       appBar: new AppBar(
-        title: new Text(widget.title),
+        title: new Text("WidgetAdvance"),
         backgroundColor: const Color(0xFF009688),
         bottom: TabBar(
           controller: _tabController,
