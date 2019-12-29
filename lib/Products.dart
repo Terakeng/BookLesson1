@@ -54,7 +54,7 @@ class _Products extends State<Products> {
             child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
-                  "TodaySchedule",
+                  "MaterialUI",
                   style: TextStyle(
                       fontSize: 32.0,
                       color: Colors.black,

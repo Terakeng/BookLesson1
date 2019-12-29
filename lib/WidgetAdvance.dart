@@ -29,7 +29,7 @@ class _WidgetAdvance extends State<WidgetAdvance>
     navigationMessage = items[navigationIndex];
     for (var i = 0; i < 10; i++) {
       var item = Container(
-        color: i.isOdd ? Colors.blue : Colors.green,
+        color: i.isOdd ? Colors.white : Colors.yellow,
         height: 100.0,
         child: Center(
           child: Text(
@@ -100,10 +100,6 @@ class _WidgetAdvance extends State<WidgetAdvance>
             icon: Icon(Icons.android),
           ),
           BottomNavigationBarItem(
-            title: Text('いいね'),
-            icon: Icon(Icons.favorite),
-          ),
-           BottomNavigationBarItem(
             title: Text('いいね'),
             icon: Icon(Icons.favorite),
           ),

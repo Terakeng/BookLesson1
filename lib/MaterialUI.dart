@@ -53,7 +53,7 @@ class _MaterialUI extends State<MaterialUI> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text("MaterialUI"),
         ),
         body: GridView.count(
             crossAxisCount: 1,
